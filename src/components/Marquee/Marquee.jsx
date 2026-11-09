@@ -7,14 +7,12 @@ export default function Marquee({ textSlider }) {
     textSlider.xline1,
     textSlider.xline2,
     textSlider.xline3,
-  ].filter(Boolean);
+  ];
 
-  // Zolağın ekran boyu kəsilmədən sonsuz axması üçün sözləri təkrarlayırıq
   const repeatedItems = [...items, ...items, ...items, ...items];
 
   return (
     <section className={styles.marqueeSection}>
-      {/* 1-ci Sətir (Sola doğru hərəkət edir) */}
       <div className={styles.row}>
         <div className={styles.trackLeft}>
           {repeatedItems.map((text, index) => (
@@ -26,7 +24,6 @@ export default function Marquee({ textSlider }) {
         </div>
       </div>
 
-      {/* 2-ci Sətir (Sağa doğru hərəkət edir) */}
       <div className={styles.row}>
         <div className={styles.trackRight}>
           {repeatedItems.map((text, index) => (

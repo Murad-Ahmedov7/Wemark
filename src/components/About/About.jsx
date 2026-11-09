@@ -11,18 +11,15 @@ export default function About({ title, description, images = [] }) {
     ? description
         .split("\n")
         .map((p) => p.trim())
-        .filter(Boolean)
+        .filter((p) => p !== "")
     : [];
 
-  const titleLines = (title || "About\nxSchool")
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
+  const titleLines = title
+    ? title.split("\n").map((line) => line.trim())
+    : ["About", "xSchool"];
 
   const handlePrev = () => {
-    setActiveIndex((prev) =>
-      prev <= 1 ? images.length : prev - 1
-    );
+    setActiveIndex((prev) => (prev <= 1 ? images.length : prev - 1));
   };
 
   const handleNext = () => {
@@ -80,7 +77,7 @@ export default function About({ title, description, images = [] }) {
             className={`${styles.navButton} ${styles.prevButton}`}
             onClick={handlePrev}
           >
-            &#8592;
+            ←
           </button>
 
           <div
@@ -109,7 +106,7 @@ export default function About({ title, description, images = [] }) {
             className={`${styles.navButton} ${styles.nextButton}`}
             onClick={handleNext}
           >
-            &#8594;
+            →
           </button>
         </div>
       )}

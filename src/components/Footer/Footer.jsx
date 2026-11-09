@@ -16,7 +16,6 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        {/* 1. Yuxarı hissə: 4 Sütun və Yuxarı Ox */}
         <div className={styles.topSection}>
           <div className={styles.columns}>
             <div className={styles.column}>
@@ -64,7 +63,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <a href="#" className={styles.scrollTopBtn} aria-label="Scroll to top">
+          <a href="#" className={styles.scrollTopBtn}>
             <svg
               width="60"
               height="78"
@@ -83,16 +82,10 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* 2. Orta hissə: Böyük Wemark Loqosu */}
         <div className={styles.giantLogoWrapper}>
-          <img
-            src="/logo.svg"
-            alt="Wemark"
-            className={styles.giantLogo}
-          />
+          <img src="/logo.svg" alt="Wemark" className={styles.giantLogo} />
         </div>
 
-        {/* 3. Aşağı hissə: Copyright və Dil seçimi */}
         <div className={styles.bottomSection}>
           <div className={styles.bottomLeft}>
             <span>COPYRIGHT © 2024 WEMARK</span>

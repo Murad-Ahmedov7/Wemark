@@ -1,12 +1,7 @@
 import styles from "./Banner.module.css";
 
 export default function Banner({ title, image }) {
-  const lines = title
-    ? title
-        .split(/\r?\n/)
-        .map((line) => line.replace(/\s+/g, " ").trim())
-        .filter(Boolean)
-    : [];
+  const lines = title ? title.split("\n").map((line) => line.trim()) : [];
 
   return (
     <section className={styles.banner}>

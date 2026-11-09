@@ -6,10 +6,9 @@ import styles from "./Faq.module.css";
 export default function Faq({ title, faqs = [] }) {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const titleLines = (title || "questions?\nwe’ve got answers.")
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
+  const titleLines = title
+    ? title.split("\n").map((line) => line.trim())
+    : ["questions?", "we’ve got answers."];
 
   const toggleFaq = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index));
