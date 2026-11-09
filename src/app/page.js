@@ -5,6 +5,7 @@ import Founder from "@/components/Founder/Founder";
 import Program from "@/components/Program/Program";
 import Marquee from "@/components/Marquee/Marquee";
 import Faq from "@/components/Faq/Faq";
+import Footer from "@/components/Footer/Footer";
 
 async function getXSchoolData() {
   const res = await fetch("https://admin.wemark.pro/api/tasks-xschool/", {
@@ -34,6 +35,7 @@ export default async function Home() {
       <Program programs={data.programs} />
       <Marquee textSlider={data.text_slider} />
       <Faq title={data.faq_title} faqs={data.xschool_faq} />
+      <Footer />
     </main>
   );
 }

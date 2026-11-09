@@ -1,0 +1,194 @@
+.footer {
+  background-color: #14141a;
+  color: #e0e0e0;
+  padding-top: 76px;
+  padding-bottom: 42px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 54px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+}
+
+.columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 88px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columnTitle {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #e0e0e0;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #8e8e93;
+}
+
+.linkList a {
+  transition: color 0.2s ease;
+}
+
+.linkList a:hover {
+  color: #e0e0e0;
+}
+
+.scrollTopBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.scrollTopBtn:hover {
+  opacity: 0.75;
+}
+
+.giantLogoWrapper {
+  padding: 68px 0 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.giantLogo {
+  width: 874px;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.16;
+  display: block;
+}
+
+.bottomSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #8e8e93;
+}
+
+.bottomLeft {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.bottomLeft a {
+  transition: color 0.2s ease;
+}
+
+.bottomLeft a:hover {
+  color: #e0e0e0;
+}
+
+.languageSwitch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1150px) {
+  .columns {
+    gap: 44px;
+    flex-wrap: wrap;
+  }
+
+  .columnTitle {
+    font-size: 22px;
+  }
+
+  .linkList {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .topSection {
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  .columns {
+    flex-direction: column;
+    gap: 36px;
+    width: 100%;
+  }
+
+  .column {
+    gap: 16px;
+  }
+
+  .columnTitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .linkList {
+    font-size: 16px;
+    line-height: 24px;
+    gap: 8px;
+  }
+
+  .scrollTopBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .scrollTopBtn svg {
+    width: 36px;
+    height: 48px;
+  }
+
+  .giantLogoWrapper {
+    padding: 48px 0;
+  }
+
+  .bottomSection {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+    font-size: 12px;
+  }
+
+  .bottomLeft {
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
