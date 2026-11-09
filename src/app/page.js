@@ -1,6 +1,8 @@
 import Header from "@/components/Header/Header";
 import Banner from "@/components/Banner/Banner";
 import About from "@/components/About/About";
+import Founder from "@/components/Founder/Founder";
+import Program from "@/components/Program/Program";
 
 async function getXSchoolData() {
   const res = await fetch("https://admin.wemark.pro/api/tasks-xschool/", {
@@ -26,6 +28,8 @@ export default async function Home() {
         description={data.about_description}
         images={data.about_images}
       />
+      <Founder founders={data.founders} />
+      <Program programs={data.programs} />
     </main>
   );
 }
