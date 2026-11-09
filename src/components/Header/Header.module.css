@@ -1,0 +1,114 @@
+.header {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 120px;
+  height: 19px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.navItem a {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #e0e0e0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.navItem a:hover {
+  opacity: 0.75;
+}
+
+.cta {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #e0e0e0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.cta:hover {
+  opacity: 0.75;
+}
+
+.mobileMenuBtn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .navList {
+    gap: 24px;
+  }
+
+  .navItem a,
+  .cta {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    top: 28px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .logo {
+    width: 102px;
+    height: 16px;
+  }
+
+  .nav,
+  .cta {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: block;
+  }
+}

@@ -1,3 +1,6 @@
+import Header from "@/components/Header/Header";
+import Banner from "@/components/Banner/Banner";
+
 async function getXSchoolData() {
   const res = await fetch("https://admin.wemark.pro/api/tasks-xschool/", {
     cache: "no-store",
@@ -15,7 +18,8 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>{data.banner_title}</h1>
+      <Header />
+      <Banner title={data.banner_title} image={data.banner_image} />
     </main>
   );
 }
