@@ -4,21 +4,14 @@
   margin: 0;
 }
 
-:root {
-  --bg-light: #e0e0e0;
-  --text-dark: #14141a;
-  --text-light: #e0e0e0;
-}
-
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background-color: #e0e0e0;
+  color: #14141a;
   font-family: "TT Hoves", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {

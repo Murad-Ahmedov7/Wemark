@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "./About.module.css";
 
 export default function About({ title, description, images = [] }) {
-  const loopImages = [...images, ...images, ...images];
-  const [activeIndex, setActiveIndex] = useState(images.length + 1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const paragraphs = description
     ? description
@@ -19,13 +18,11 @@ export default function About({ title, description, images = [] }) {
     : ["About", "xSchool"];
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev <= 1 ? images.length : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) =>
-      prev >= loopImages.length - 2 ? images.length * 2 - 1 : prev + 1
-    );
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
@@ -36,7 +33,14 @@ export default function About({ title, description, images = [] }) {
     }, 3500);
 
     return () => clearInterval(timer);
-  }, [images.length, activeIndex]);
+  }, [images.length, currentIndex]);
+
+  const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+  const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+  const visibleImages =
+    images.length > 0
+      ? [images[prevIndex], images[currentIndex], images[nextIndex]]
+      : [];
 
   return (
     <section id="about" className={styles.aboutSection}>
@@ -80,18 +84,9 @@ export default function About({ title, description, images = [] }) {
             ←
           </button>
 
-          <div
-            className={styles.sliderTrack}
-            style={{
-              "--active-index": activeIndex,
-            }}
-          >
-            {loopImages.map((item, index) => (
-              <div
-                key={index}
-                className={styles.slide}
-                onClick={() => setActiveIndex(index)}
-              >
+          <div className={styles.sliderTrack}>
+            {visibleImages.map((item, index) => (
+              <div key={index} className={styles.slide}>
                 <img
                   src={item.image}
                   alt="xSchool"
