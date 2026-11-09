@@ -78,6 +78,10 @@
   cursor: pointer;
 }
 
+.mobileMenu {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .navList {
     gap: 24px;
@@ -110,5 +114,36 @@
 
   .mobileMenuBtn {
     display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #14141a;
+    margin: 16px 20px 0;
+    padding: 24px 20px;
+    border-radius: 8px;
+  }
+
+  .mobileNavList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mobileNavList a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #e0e0e0;
+  }
+
+  .mobileCta {
+    font-size: 18px;
+    font-weight: 500;
+    color: #e0e0e0;
+    text-decoration: underline;
+    padding-top: 8px;
+    border-top: 1px solid #333333;
   }
 }

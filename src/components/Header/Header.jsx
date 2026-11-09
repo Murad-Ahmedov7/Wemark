@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./Header.module.css";
 
 const navItems = [
@@ -10,6 +13,8 @@ const navItems = [
 ];
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -31,10 +36,35 @@ export default function Header() {
           Let’s Talk
         </a>
 
-        <button type="button" className={styles.mobileMenuBtn}>
-          Menu
+        <button
+          type="button"
+          className={styles.mobileMenuBtn}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "Close" : "Menu"}
         </button>
       </div>
+
+      {menuOpen && (
+        <div className={styles.mobileMenu}>
+          <ul className={styles.mobileNavList}>
+            {navItems.map((item) => (
+              <li key={item}>
+                <a href="#" onClick={() => setMenuOpen(false)}>
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#"
+            className={styles.mobileCta}
+            onClick={() => setMenuOpen(false)}
+          >
+            Let’s Talk
+          </a>
+        </div>
+      )}
     </header>
   );
 }
